@@ -1,7 +1,60 @@
 <resources>
-    <string name="app_name">CienciasDown</string>
+    <!-- Definições Básicas -->
+    <string name="app_name">Educadown</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_agua">AguaActivity</string>
+    <string name="title_activity_cadastro">CadastroActivity</string>
+    <string name="title_activity_historico">HistoricoActivity</string>
+    <string name="title_activity_ciclo_agua">CicloAguaActivity</string>
+    <string name="title_activity_consumo_agua">ConsumoAguaActivity</string>
+    <string name="title_activity_poluicao_agua">PoluicaoAguaActivity</string>
+
+    <!-- Definições de Botões -->
+    <string name="novo_usuario">Novo Usuário</string>
+    <string name="texto_botao_enviar">Cadastrar</string>
+    <string name="texto_botao_ver_alunos">Ver Cadastrados</string>
+    <string name="texto_botao_historico">Histórico</string>
+    <string name="texto_botao_agua">Água</string>
+    <string name="texto_botao_astros">Astros e Estrelas</string>
+    <string name="texto_botao_sentidos">Cinco Sentidos</string>
+    <string name="texto_botao_fotossintese">Fotossíntese</string>
+    <string name="texto_botao_luz">Luz e Sombra</string>
+    <string name="texto_botao_reciclagem">Reciclagem</string>
+    <string name="texto_botao_ciclo_agua">Ciclo da Água</string>
+    <string name="texto_botao_consumo_agua">Consumo</string>
+    <string name="texto_botao_poluicao_agua">Poluição</string>
+
+    <!-- Definições de Textos e Títulos -->
+    <string name="texto_assunto">Selecione um Assunto</string>
+    <string name="texto_info_aluno">Informações sobre o Aluno</string>
+    <string name="texto_nome">Nome</string>
+    <string name="texto_nascimento">Data de Nascimento</string>
+    <string name="texto_turma">Turma</string>
+
+    <string name="popup">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet turpis ac
+        urna placerat porta eget ut enim. Donec eget hendrerit risus. Pellentesque eleifend
+        tristique nibh in consequat. Ut vel magna non dolor venenatis facilisis. Morbi nibh quam,
+        dapibus vitae metus non, vestibulum dignissim dui. Mauris molestie tortor dui, et mollis
+        metus blandit et. Vestibulum ligula arcu, efficitur a eros vel, imperdiet vehicula odio.
+        Sed at urna id risus mollis volutpat id eu arcu. Donec vel tincidunt libero, quis placerat
+        sem. Donec convallis placerat ornare. Vivamus libero nibh, commodo nec dolor lobortis,
+        blandit fringilla enim. Sed porta, augue et bibendum rutrum, arcu mauris tincidunt risus,
+        eget venenatis erat purus id magna.
+    </string>
+
+    <string name="prompt">Choose a name</string>
+    <string-array name="names_array">
+        <item>Clique para selecionar o Aluno</item>
+        <item>Abner</item>
+        <item>Moises</item>
+        <item>Santos</item>
+        <item>Gomes</item>
+    </string-array>
+    <string name="title_activity_alunos">AlunosActivity</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+
 </resources>
