@@ -8,10 +8,11 @@
     <string name="title_activity_ciclo_agua">CicloAguaActivity</string>
     <string name="title_activity_consumo_agua">ConsumoAguaActivity</string>
     <string name="title_activity_poluicao_agua">PoluicaoAguaActivity</string>
+    <string name="title_activity_alunos">AlunosActivity</string>
 
     <!-- Definições de Botões -->
     <string name="novo_usuario">Novo Usuário</string>
-    <string name="texto_botao_enviar">Cadastrar</string>
+    <string name="texto_botao_enviar">Salvar</string>
     <string name="texto_botao_ver_alunos">Ver Cadastrados</string>
     <string name="texto_botao_historico">Histórico</string>
     <string name="texto_botao_agua">Água</string>
@@ -43,18 +44,13 @@
         eget venenatis erat purus id magna.
     </string>
 
-    <string name="prompt">Choose a name</string>
+    <!--string name="prompt">Choose a name</string>
     <string-array name="names_array">
         <item>Clique para selecionar o Aluno</item>
         <item>Abner</item>
         <item>Moises</item>
         <item>Santos</item>
         <item>Gomes</item>
-    </string-array>
-    <string name="title_activity_alunos">AlunosActivity</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-
+    </string-array-->
 
 </resources>

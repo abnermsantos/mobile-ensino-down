@@ -13,9 +13,15 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.List;
+
+import br.edu.ifspsaocarlos.sdm.cienciasdown.Controller.AlunoDAO;
+import br.edu.ifspsaocarlos.sdm.cienciasdown.Model.Aluno;
 import br.edu.ifspsaocarlos.sdm.cienciasdown.R;
+import br.edu.ifspsaocarlos.sdm.cienciasdown.adapter.AlunoArrayAdapter;
 
 public class MainActivity extends ActionBarActivity {
+    AlunoDAO alunoDAO;
     Button btAgua;
     Button btAstros;
     Button btSentidos;
@@ -28,12 +34,15 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Definindo as propriedades do Spinner
+        /*//Definindo as propriedades do Spinner
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.names_array, android.R.layout.simple_spinner_item);
+                this, listaAlunos(), android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        spinner.setAdapter(adapter);*/
+
+        alunoDAO = new AlunoDAO(this);
+        alunoDAO.open();
 
         //Vinculando Botões
         btAgua = (Button) findViewById(R.id.bt_acessar_agua);
@@ -42,6 +51,24 @@ public class MainActivity extends ActionBarActivity {
         btFotossintese = (Button) findViewById(R.id.bt_acessar_fotossintese);
         btLuz = (Button) findViewById(R.id.bt_acessar_luz);
         btReciclagem = (Button) findViewById(R.id.bt_acessar_reciclagem);
+
+        loadSpinner();
+    }
+
+    private void loadSpinner() {
+        // Spinner Drop down elements
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        List<Aluno> alunosArray = alunoDAO.buscaTodos();
+
+        // Creating adapter for spinner
+        ArrayAdapter<Aluno> dataAdapter = new ArrayAdapter<Aluno>(this,
+                android.R.layout.simple_spinner_item, alunosArray);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
     }
 
     @Override

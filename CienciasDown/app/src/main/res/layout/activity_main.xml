@@ -42,10 +42,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:background="@drawable/botao"
-            android:prompt="@string/prompt"
             android:textColor="#FFFFFF"
             android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:hint="Clique para selecionar o aluno" />
 
         <Button android:id="@+id/bt_historico"
             android:layout_width="match_parent"

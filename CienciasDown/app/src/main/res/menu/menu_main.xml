@@ -9,9 +9,26 @@
         android:icon="@drawable/ic_home"
         android:title="Home"/-->
 
+    <item android:id="@+id/ic_add"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_add"
+        android:visible="false"
+        android:title="Adicionar"/>
+
+    <item android:id="@+id/ic_remove"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_remove"
+        android:visible="false"
+        android:title="Remove"/>
+
+    <item android:id="@+id/ic_alunos"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_alunos"
+        android:visible="false"
+        android:title="ListaTodos"/>
+
     <item android:id="@+id/ic_help"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_help"
         android:title="HELP"/>
-
 </menu>
