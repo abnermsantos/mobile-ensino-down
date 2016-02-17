@@ -33,11 +33,31 @@ public class AlunoDAO {
         database.close();
     }
 
+    public List<String> buscaNomes(){
+        List<String> nomes = new ArrayList<String>();
+        Cursor cursor = database.query(SQLiteHelper.TABLE_ALUNO, new String[] {
+                        SQLiteHelper.KEY_NAME},
+                null, null, null, null, SQLiteHelper.KEY_NAME);
+
+        if (cursor!=null)
+        {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                String nome = "";
+                nome = cursor.getString(0);
+                nomes.add(nome);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return nomes;
+    }
+
     public List<Aluno> buscaTodos() {
 
         List<Aluno> alunos = new ArrayList<Aluno>();
 
-        Cursor cursor = database.query(SQLiteHelper.DATABASE_TABLE_ALUNO, new String[] { SQLiteHelper.KEY_ID,
+        Cursor cursor = database.query(SQLiteHelper.TABLE_ALUNO, new String[] { SQLiteHelper.KEY_ID,
                         SQLiteHelper.KEY_NAME, SQLiteHelper.KEY_NASCIMENTO, SQLiteHelper.KEY_TURMA},
                 null, null, null, null, SQLiteHelper.KEY_NAME);
 
@@ -63,9 +83,9 @@ public class AlunoDAO {
 
         Aluno aluno = new Aluno();
 
-        Cursor cursor = database.query(SQLiteHelper.DATABASE_TABLE_ALUNO, new String[] { SQLiteHelper.KEY_ID,
+        Cursor cursor = database.query(SQLiteHelper.TABLE_ALUNO, new String[] { SQLiteHelper.KEY_ID,
                         SQLiteHelper.KEY_NAME, SQLiteHelper.KEY_NASCIMENTO, SQLiteHelper.KEY_TURMA},
-                SQLiteHelper.KEY_ID + "=?", new String[] { busca }, null, null, SQLiteHelper.KEY_ID);
+                SQLiteHelper.KEY_NAME + "=?", new String[] { busca }, null, null, SQLiteHelper.KEY_NAME);
 
         if (cursor!=null)
         {
@@ -87,7 +107,7 @@ public class AlunoDAO {
         updateValues.put(SQLiteHelper.KEY_NAME, a.getNome());
         updateValues.put(SQLiteHelper.KEY_NASCIMENTO, a.getNascimento());
         updateValues.put(SQLiteHelper.KEY_TURMA, a.getTurma());
-        database.update(SQLiteHelper.DATABASE_TABLE_ALUNO, updateValues, SQLiteHelper.KEY_ID + "=" + a.getId(), null);
+        database.update(SQLiteHelper.TABLE_ALUNO, updateValues, SQLiteHelper.KEY_ID + "=" + a.getId(), null);
     }
 
     public void create(Aluno a) {
@@ -95,12 +115,11 @@ public class AlunoDAO {
         values.put(SQLiteHelper.KEY_NAME, a.getNome());
         values.put(SQLiteHelper.KEY_NASCIMENTO, a.getNascimento());
         values.put(SQLiteHelper.KEY_TURMA, a.getTurma());
-        database.insert(SQLiteHelper.DATABASE_TABLE_ALUNO, null, values);
+        database.insert(SQLiteHelper.TABLE_ALUNO, null, values);
     }
 
     public void delete(Aluno a)
     {
-        database.delete(SQLiteHelper.DATABASE_TABLE_ALUNO, SQLiteHelper.KEY_ID +"="+ a.getId(), null);
-
+        database.delete(SQLiteHelper.TABLE_ALUNO, SQLiteHelper.KEY_ID +"="+ a.getId(), null);
     }
 }

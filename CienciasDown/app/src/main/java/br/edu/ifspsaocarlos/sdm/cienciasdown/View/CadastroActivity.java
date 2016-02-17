@@ -169,16 +169,4 @@ public class CadastroActivity extends ActionBarActivity {
                     Toast.LENGTH_SHORT).show();
         }
     }
-
-    /*
-    //Método para cadastrar o aluno no Banco de Dados
-    public void onClickEnviar(View v){
-
-    }
-
-    //Método para chamar a Activity Alunos Cadastrados
-    public void onClickVerAlunos(View v){
-
-    }
-    */
 }

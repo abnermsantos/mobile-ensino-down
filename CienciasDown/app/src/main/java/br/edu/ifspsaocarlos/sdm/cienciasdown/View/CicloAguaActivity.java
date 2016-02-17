@@ -1,11 +1,14 @@
 package br.edu.ifspsaocarlos.sdm.cienciasdown.View;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.Toast;
 
 import br.edu.ifspsaocarlos.sdm.cienciasdown.R;
 
@@ -42,5 +45,16 @@ public class CicloAguaActivity extends ActionBarActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.popup_help);
         dialog.show();
+    }
+
+    //Método para chamar a Activity de Trabalho(Evaporação)
+    public void onClickEvaporacao(View v){
+        try{
+            Intent evaporacaoIntent = new Intent(CicloAguaActivity.this, EvaporacaoActivity.class);
+            startActivity(evaporacaoIntent);
+        }catch (Exception e){
+            Toast.makeText(CicloAguaActivity.this, "Ocorreu uma falha, por favor tente novamente.",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 }

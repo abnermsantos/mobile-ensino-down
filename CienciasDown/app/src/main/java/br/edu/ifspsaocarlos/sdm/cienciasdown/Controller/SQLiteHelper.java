@@ -9,17 +9,35 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "educadown.db";
-    public static final String DATABASE_TABLE_ALUNO = "aluno";
+    public static final String TABLE_ALUNO = "aluno";
     public static final String KEY_ID = "id";
     public static final String KEY_NAME = "nome";
     public static final String KEY_NASCIMENTO = "nascimento";
     public static final String KEY_TURMA = "turma";
 
+    public static final String TABLE_HISTORICO = "historico";
+    public static final String KEY_HISTORICO = "idHistorico";
+    public static final String ALUNO = "nome";
+    public static final String ALUNO_TURMA = "alunoTurma";
+    public static final String DISCIPLINA = "disciplina";
+    public static final String TAREFA = "tarefa";
+    public static final String TENTATIVAS = "tentativas";
+
     public static final int DATABASE_VERSION = 1;
 
-    public static final String DATABASE_CREATE = "CREATE TABLE "+ DATABASE_TABLE_ALUNO +" " +
-            "("+ KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_NAME +" TEXT NOT NULL, "
-            + KEY_NASCIMENTO +" TEXT NOT NULL, " + KEY_TURMA +" TEXT NOT NULL);";
+    public static final String CREATE_TABLE_ALUNO =
+            "CREATE TABLE "+ TABLE_ALUNO +"("+ KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + KEY_NAME +" TEXT NOT NULL, " + KEY_NASCIMENTO +" TEXT NOT NULL, " + KEY_TURMA +
+                    " TEXT NOT NULL);";
+
+    public static final String CREATE_TABLE_HISTORICO =
+            " CREATE TABLE " + TABLE_HISTORICO + "(" + KEY_HISTORICO + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + ALUNO + " TEXT NOT NULL, " + ALUNO_TURMA + " TEXT NOT NULL, " + DISCIPLINA +
+                    " TEXT NOT NULL, " + TAREFA + " TEXT NOT NULL, " + TENTATIVAS + " TEXT NOT NULL, " +
+                    "FOREIGN KEY (" + ALUNO + ") REFERENCES " + TABLE_ALUNO + "(" + KEY_NAME + ")," +
+                    "FOREIGN KEY (" + ALUNO_TURMA + ") REFERENCES " + TABLE_ALUNO  + "(" + KEY_TURMA + "));";
+
+
 
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -27,7 +45,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
-        database.execSQL(DATABASE_CREATE);
+        database.execSQL(CREATE_TABLE_ALUNO);
+        database.execSQL(CREATE_TABLE_HISTORICO);
     }
 
     @Override

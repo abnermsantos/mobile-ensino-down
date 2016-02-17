@@ -2,12 +2,14 @@ package br.edu.ifspsaocarlos.sdm.cienciasdown.View;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -28,21 +30,23 @@ public class MainActivity extends ActionBarActivity {
     Button btFotossintese;
     Button btLuz;
     Button btReciclagem;
+    Button btHistorico;
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*//Definindo as propriedades do Spinner
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, listaAlunos(), android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);*/
-
         alunoDAO = new AlunoDAO(this);
         alunoDAO.open();
+
+        pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+        editor = pref.edit();
+
+        //Vinculando a chave da API Youtube na variável editor
+        editor.putString("key_youtubeAPI", "AIzaSyDJX5pzOjwU50sldooCDQj1mtmS2IguffI");
 
         //Vinculando Botões
         btAgua = (Button) findViewById(R.id.bt_acessar_agua);
@@ -51,24 +55,76 @@ public class MainActivity extends ActionBarActivity {
         btFotossintese = (Button) findViewById(R.id.bt_acessar_fotossintese);
         btLuz = (Button) findViewById(R.id.bt_acessar_luz);
         btReciclagem = (Button) findViewById(R.id.bt_acessar_reciclagem);
+        btHistorico = (Button) findViewById(R.id.bt_historico);
+    }
 
+    @Override
+    public void onResume(){
+        super.onResume();
         loadSpinner();
     }
 
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        editor.clear();
+        editor.commit();
+    }
+
+    //Método para carregar os alunos no Spinner
     private void loadSpinner() {
         // Spinner Drop down elements
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        List<Aluno> alunosArray = alunoDAO.buscaTodos();
+        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        List<String> nomesArray = alunoDAO.buscaNomes();
+
+        //Blqueia os botões caso não tenha nenhum aluno selecionado
+        if(nomesArray.isEmpty()){
+            btAgua.setEnabled(false);
+            btAstros.setEnabled(false);
+            btSentidos.setEnabled(false);
+            btFotossintese.setEnabled(false);
+            btLuz.setEnabled(false);
+            btReciclagem.setEnabled(false);
+            btHistorico.setEnabled(false);
+        }
 
         // Creating adapter for spinner
-        ArrayAdapter<Aluno> dataAdapter = new ArrayAdapter<Aluno>(this,
-                android.R.layout.simple_spinner_item, alunosArray);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, nomesArray);
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Aluno aluno = alunoDAO.search(spinner.getSelectedItem().toString());
+
+                //Salvando aluno em variável compartilhada para Uso Futuro
+                editor.putString("key_nome", aluno.getNome());
+                editor.putString("key_nasc", aluno.getNascimento());
+                editor.putString("key_turma", aluno.getTurma());
+                editor.putString("key_id", aluno.getId());
+                editor.commit();
+
+                //Libera os botões para uso
+                btAgua.setEnabled(true);
+                btAstros.setEnabled(true);
+                btSentidos.setEnabled(true);
+                btFotossintese.setEnabled(true);
+                btLuz.setEnabled(true);
+                btReciclagem.setEnabled(true);
+                btHistorico.setEnabled(true);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                //
+            }
+        });
     }
 
     @Override

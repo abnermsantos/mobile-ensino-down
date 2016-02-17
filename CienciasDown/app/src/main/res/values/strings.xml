@@ -9,6 +9,7 @@
     <string name="title_activity_consumo_agua">ConsumoAguaActivity</string>
     <string name="title_activity_poluicao_agua">PoluicaoAguaActivity</string>
     <string name="title_activity_alunos">AlunosActivity</string>
+    <string name="title_activity_evaporacao">EvaporacaoActivity</string>
 
     <!-- Definições de Botões -->
     <string name="novo_usuario">Novo Usuário</string>
@@ -24,6 +25,8 @@
     <string name="texto_botao_ciclo_agua">Ciclo da Água</string>
     <string name="texto_botao_consumo_agua">Consumo</string>
     <string name="texto_botao_poluicao_agua">Poluição</string>
+    <string name="texto_botao_continuar">Continuar</string>
+    <string name="texto_botao_repetir">Tente Novamente</string>
 
     <!-- Definições de Textos e Títulos -->
     <string name="texto_assunto">Selecione um Assunto</string>
@@ -31,26 +34,17 @@
     <string name="texto_nome">Nome</string>
     <string name="texto_nascimento">Data de Nascimento</string>
     <string name="texto_turma">Turma</string>
+    <string name="texto_parabens">Parabéns, você acertou. Vamos para o próximo?</string>
+    <string name="texto_tente_novamente">Que pena. Vamos tentar novamente?</string>
 
+    <!-- Definições Questionários -->
+    <string name="questao_evaporacao">QUAL DOS ITENS FAZ PARTE DA EVAPORAÇÃO:</string>
+
+    <!-- Definições de Popups -->
     <string name="popup">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet turpis ac
         urna placerat porta eget ut enim. Donec eget hendrerit risus. Pellentesque eleifend
-        tristique nibh in consequat. Ut vel magna non dolor venenatis facilisis. Morbi nibh quam,
-        dapibus vitae metus non, vestibulum dignissim dui. Mauris molestie tortor dui, et mollis
-        metus blandit et. Vestibulum ligula arcu, efficitur a eros vel, imperdiet vehicula odio.
-        Sed at urna id risus mollis volutpat id eu arcu. Donec vel tincidunt libero, quis placerat
-        sem. Donec convallis placerat ornare. Vivamus libero nibh, commodo nec dolor lobortis,
-        blandit fringilla enim. Sed porta, augue et bibendum rutrum, arcu mauris tincidunt risus,
-        eget venenatis erat purus id magna.
+        tristique nibh in consequat. Ut vel magna non dolor venenatis facilisis.
     </string>
-
-    <!--string name="prompt">Choose a name</string>
-    <string-array name="names_array">
-        <item>Clique para selecionar o Aluno</item>
-        <item>Abner</item>
-        <item>Moises</item>
-        <item>Santos</item>
-        <item>Gomes</item>
-    </string-array-->
 
 </resources>

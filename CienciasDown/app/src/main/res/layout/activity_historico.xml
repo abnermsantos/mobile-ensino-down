@@ -14,10 +14,12 @@
         android:background="@drawable/screen_border_layout"
         android:orientation="vertical" >
 
-        <ListView
-            android:id="@android:id/android:list"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:title="Graph Title"
+            android:id="@+id/barGraphIndividual"
+            android:layout_below="@+id/barGraphText" />
 
     </LinearLayout>
 </LinearLayout>
