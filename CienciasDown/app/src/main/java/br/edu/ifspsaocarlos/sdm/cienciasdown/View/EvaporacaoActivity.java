@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,7 +41,8 @@ public class EvaporacaoActivity extends YouTubeBaseActivity implements YouTubePl
     private Button btRepetir;
     private TextView txtParabens;
     private TextView txtRepetir;
-    private String idVideo = "y6XMDA9mj3Y";
+	private String idVideo = "WpOkQ7ayUxQ";
+    //private String idVideo = "y6XMDA9mj3Y";
     private int tentativas;
     SharedPreferences prefs;
     Historico historico;

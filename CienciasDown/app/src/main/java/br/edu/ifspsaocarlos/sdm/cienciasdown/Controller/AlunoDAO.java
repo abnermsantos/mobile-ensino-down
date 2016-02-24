@@ -53,6 +53,27 @@ public class AlunoDAO {
         return nomes;
     }
 
+    public List<Aluno> buscaPorTurma(String turma){
+        List<Aluno> alunos = new ArrayList<Aluno>();
+        Cursor cursor = database.query(SQLiteHelper.TABLE_ALUNO, new String[] {
+                        SQLiteHelper.KEY_NAME, SQLiteHelper.KEY_TURMA},
+                SQLiteHelper.KEY_TURMA + "=?", new String[] { turma }, null, null, SQLiteHelper.KEY_NAME);
+
+        if (cursor!=null)
+        {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                Aluno aluno = new Aluno();
+                aluno.setNome(cursor.getString(0));
+                aluno.setTurma(cursor.getString(1));
+                alunos.add(aluno);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return alunos;
+    }
+
     public List<Aluno> buscaTodos() {
 
         List<Aluno> alunos = new ArrayList<Aluno>();
