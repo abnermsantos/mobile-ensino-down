@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.edu.ifspsaocarlos.sdm.cienciasdown" >
+    package="br.edu.ifspsaocarlos.sdm.cienciasdown">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -8,11 +8,11 @@
         android:allowBackup="true"
         android:icon="@drawable/icone"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".View.MainActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,12 +42,18 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".View.AlunosActivity"
-            android:label="@string/title_activity_alunos" >
-        </activity>
+            android:label="@string/title_activity_alunos" />
         <activity
             android:name=".View.EvaporacaoActivity"
-            android:label="@string/title_activity_evaporacao" >
-        </activity>
+            android:label="@string/title_activity_evaporacao" />
+        <activity
+            android:name=".View.CondensacaoActivity"
+            android:label="@string/title_activity_condensacao"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".View.PrecipitacaoActivity"
+            android:label="@string/title_activity_precipitacao"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -10,6 +10,9 @@
     <string name="title_activity_poluicao_agua">PoluicaoAguaActivity</string>
     <string name="title_activity_alunos">AlunosActivity</string>
     <string name="title_activity_evaporacao">EvaporacaoActivity</string>
+    <string name="title_activity_condensacao">CondensacaoActivity</string>
+    <string name="id_video">_hAz2-1jTvs</string>
+
 
     <!-- Definições de Botões -->
     <string name="novo_usuario">Novo Usuário</string>
@@ -34,11 +37,13 @@
     <string name="texto_nome">Nome</string>
     <string name="texto_nascimento">Data de Nascimento</string>
     <string name="texto_turma">Turma</string>
-    <string name="texto_parabens">Parabéns, você acertou. Vamos para o próximo?</string>
-    <string name="texto_tente_novamente">Que pena. Vamos tentar novamente?</string>
+    <string name="texto_parabens">Parabéns! Você acertou. Vamos para o próximo?</string>
+    <string name="texto_tente_novamente">Que pena! Vamos tentar novamente?</string>
 
     <!-- Definições Questionários -->
-    <string name="questao_evaporacao">QUAL DOS ITENS FAZ PARTE DA EVAPORAÇÃO:</string>
+    <string name="questao_evaporacao">COM MINHA AJUDA, A ÁGUA EVAPORA. QUERO VER VOCÊ ADIVINHAR QUEM EU SOU AGORA!</string>
+    <string name="questao_condensacao">EU SÓ APAREÇO QUANDO A ÁGUA EVAPORA. TENTE DESCOBRIR ESSA CHARADA AGORA!</string>
+    <string name="questao_precipitacao">PARA CHOVER, EU PRECISO APARECER. QUEM SOU EU?</string>
 
     <!-- Definições de Popups -->
     <string name="popup">
@@ -46,5 +51,6 @@
         urna placerat porta eget ut enim. Donec eget hendrerit risus. Pellentesque eleifend
         tristique nibh in consequat. Ut vel magna non dolor venenatis facilisis.
     </string>
+    <string name="title_activity_precipitacao">PrecipitacaoActivity</string>
 
 </resources>

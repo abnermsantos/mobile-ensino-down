@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 
 import br.edu.ifspsaocarlos.sdm.cienciasdown.R;
 
-public class CicloAguaActivity extends ActionBarActivity {
+public class CicloAguaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +51,30 @@ public class CicloAguaActivity extends ActionBarActivity {
     //Método para chamar a Activity de Trabalho(Evaporação)
     public void onClickEvaporacao(View v){
         try{
-            Intent evaporacaoIntent = new Intent(CicloAguaActivity.this, EvaporacaoActivity.class);
-            startActivity(evaporacaoIntent);
+            Intent intent = new Intent(CicloAguaActivity.this, EvaporacaoActivity.class);
+            startActivity(intent);
+        }catch (Exception e){
+            Toast.makeText(CicloAguaActivity.this, "Ocorreu uma falha, por favor tente novamente.",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //Método para chamar a Activity de Trabalho(Condensação)
+    public void onClickCondensacao(View v){
+        try{
+            Intent intent = new Intent(CicloAguaActivity.this, CondensacaoActivity.class);
+            startActivity(intent);
+        }catch (Exception e){
+            Toast.makeText(CicloAguaActivity.this, "Ocorreu uma falha, por favor tente novamente.",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //Método para chamar a Activity de Trabalho(Precipitação)
+    public void onClickPrecipitacao(View v){
+        try{
+            Intent intent = new Intent(CicloAguaActivity.this, PrecipitacaoActivity.class);
+            startActivity(intent);
         }catch (Exception e){
             Toast.makeText(CicloAguaActivity.this, "Ocorreu uma falha, por favor tente novamente.",
                     Toast.LENGTH_SHORT).show();

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/screen_border_layout"
+            android:orientation="vertical">
+
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/youtubePrecipitacao"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:id="@+id/txtQuestãoPrecipitacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/questao_precipitacao"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp" >
+            </TextView>
+
+            <RadioGroup
+                android:id="@+id/rdgPrecipitacao"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opPrecCasa"
+                    android:drawableRight="@drawable/casa" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opPrecNuvem"
+                    android:drawableRight="@drawable/nuvem" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opPrecPeixe"
+                    android:drawableRight="@drawable/peixe" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/txtPrec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="31dp" >
+            </TextView>
+
+            <Button android:id="@+id/btnPrec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:background="@drawable/botao"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:onClick="onClickPrec" />
+
+            <TextView
+                android:text="@string/texto_assunto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                android:textColor="#FFFFFF"
+                android:textSize="5sp"
+                android:textStyle="bold" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+<!--RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.edu.ifspsaocarlos.sdm.cienciasdown.View.PrecipitacaoActivity"
+    android:background="@drawable/screen_border_layout">
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/youtubePrecipitacao"
+        android:layout_marginRight="315dp"
+        android:layout_marginEnd="315dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="123dp" />
+
+    <TextView
+        android:id="@+id/txtPrecParabens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_parabens"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        android:layout_alignRight="@+id/rdgPrecipitacao"
+        android:layout_alignEnd="@+id/rdgPrecipitacao"
+        android:layout_marginTop="31dp">
+    </TextView>
+
+    <Button android:id="@+id/bt_prec_continuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botao"
+        android:visibility="invisible"
+        android:text="@string/texto_botao_continuar"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/bt_prec_repetir"
+        android:layout_alignLeft="@+id/bt_prec_repetir"
+        android:layout_alignStart="@+id/bt_prec_repetir"
+        android:layout_alignRight="@+id/bt_prec_repetir"
+        android:layout_alignEnd="@+id/bt_prec_repetir"
+        android:onClick="onClickContinuar"/>
+
+    <TextView
+        android:id="@+id/txtPrecRepetir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="@string/texto_tente_novamente"
+        android:layout_alignRight="@+id/txtPrecParabens"
+        android:layout_alignEnd="@+id/txtPrecParabens"
+        android:layout_alignTop="@+id/txtPrecParabens"
+        android:layout_alignLeft="@+id/txtPrecParabens"
+        android:layout_alignStart="@+id/txtPrecParabens">
+    </TextView>
+
+    <Button android:id="@+id/bt_prec_repetir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botao"
+        android:visibility="invisible"
+        android:text="@string/texto_botao_repetir"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:onClick="onClickRepetir"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/txtPrecParabens"
+        android:layout_alignStart="@+id/txtPrecParabens" />
+
+    <TextView
+        android:id="@+id/txtQuestãoPrecipitacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/questao_precipitacao"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="87dp">
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/rdgPrecipitacao"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_alignTop="@+id/txtQuestãoPrecipitacao"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="44dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/opPrecCasa"
+            android:drawableRight="@drawable/casa" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/opPrecNuvem"
+            android:drawableRight="@drawable/nuvem" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/opPrecChuva"
+            android:drawableRight="@drawable/chuva" />
+    </RadioGroup>
+</RelativeLayout-->

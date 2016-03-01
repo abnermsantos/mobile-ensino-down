@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
     <gradient
         android:angle="270"
-        android:startColor="#2e8fc2"
-        android:endColor="#006599"/>
+        android:startColor="@color/botao_inicial"
+        android:endColor="@color/botao_final"/>
 
     <stroke
         android:width="3dp"
-        android:color="#00679e"/>
+        android:color="@color/botao_borda"/>
 
     <corners
         android:radius="10dp"/>

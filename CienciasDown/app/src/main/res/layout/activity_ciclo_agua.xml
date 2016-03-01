@@ -1,4 +1,67 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="vertical"
+            android:background="@drawable/screen_border_layout" >
+
+            <TextView
+                android:text="@string/texto_assunto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/screen_border_layout" >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight=".33"
+                android:layout_height="match_parent"
+                android:id="@+id/btnPrecipitacao"
+                android:background="@drawable/ciclo_prec"
+                android:onClick="onClickPrecipitacao" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight=".33"
+                android:layout_height="match_parent"
+                android:id="@+id/btnCondensacao"
+                android:background="@drawable/ciclo_cond"
+                android:onClick="onClickCondensacao"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight=".33"
+                android:layout_height="match_parent"
+                android:id="@+id/btnEvaporacao"
+                android:background="@drawable/ciclo_evap"
+                android:onClick="onClickEvaporacao" />
+
+        </LinearLayout>
+</LinearLayout>
+
+
+
+        <!--RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -7,38 +70,36 @@
     android:background="@drawable/ciclo_agua"
     tools:context="br.edu.ifspsaocarlos.sdm.cienciasdown.View.CicloAguaActivity">
 
-    <!--TextView android:text="Futura Activity sobre Ciclo da Água" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" /-->
-
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:text="EVAPORAÇÃO"
         android:id="@+id/btnEvaporacao"
-        android:background="@android:color/transparent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="onClickEvaporacao" />
+        android:background="@drawable/botao_transparente"
+        android:onClick="onClickEvaporacao"
+        android:layout_alignTop="@+id/btnCondensacao"
+        android:layout_toRightOf="@+id/btnCondensacao"
+        android:layout_toEndOf="@+id/btnCondensacao"
+        android:layout_marginTop="76dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button2"
-        android:background="#66000000"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="41dp"
-        android:layout_marginStart="41dp" />
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:text="Precipitação"
+        android:id="@+id/btnPrecipitacao"
+        android:background="@drawable/botao_transparente"
+        android:onClick="onClickPrecipitacao"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button3"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:text="Condesação"
+        android:id="@+id/btnCondensacao"
+        android:background="@drawable/botao_transparente"
+        android:onClick="onClickCondensacao"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp" />
 
-</RelativeLayout>
+</RelativeLayout-->
