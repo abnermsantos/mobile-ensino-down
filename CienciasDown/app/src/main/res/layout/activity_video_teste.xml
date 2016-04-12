@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+    <VideoView
+        android:id="@+id/VideoViewTeste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/screen_border_layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtQuestãoEvaporacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/questao_evaporacao"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp" >
+            </TextView>
+
+            <RadioGroup
+                android:id="@+id/rdgEvaporacao"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opEvapSol"
+                    android:drawableRight="@drawable/sol" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opEvapCasa"
+                    android:drawableRight="@drawable/casa" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opEvapPeixe"
+                    android:drawableRight="@drawable/peixe" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/txtEvap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="31dp" >
+            </TextView>
+
+            <Button android:id="@+id/btnEvap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:background="@drawable/botao"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:onClick="onClickEvap" />
+
+            <TextView
+                android:text="@string/texto_assunto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                android:textColor="#FFFFFF"
+                android:textSize="5sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

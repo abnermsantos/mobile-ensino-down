@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+    <!--ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/screen_border_layout"
+            android:orientation="vertical">
+
+            <VideoView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/videoViewPrecipitacao"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7dp" />
+
+            <!--com.google.android.youtube.player.YouTubePlayerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/youtubePrecipitacao"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7dp"/-->
+
+            <TextView
+                android:id="@+id/txtQuestãoPrecipitacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/questao_precipitacao"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp" >
+            </TextView>
+
+            <RadioGroup
+                android:id="@+id/rdgPrecipitacao"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opPrecCasa"
+                    android:drawableRight="@drawable/casa" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opPrecNuvem"
+                    android:drawableRight="@drawable/nuvem" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opPrecPeixe"
+                    android:drawableRight="@drawable/peixe" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/txtPrec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="31dp" >
+            </TextView>
+
+            <Button android:id="@+id/btnPrec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:background="@drawable/botao"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:onClick="onClickPrec" />
+
+            <TextView
+                android:text="@string/texto_assunto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                android:textColor="#FFFFFF"
+                android:textSize="5sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    <!--/ScrollView-->
+</LinearLayout>

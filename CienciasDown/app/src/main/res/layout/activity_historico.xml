@@ -1,25 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="@color/background_floating_material_light"
-    xmlns:ads="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="2dp"
-        android:layout_gravity="center"
-        android:background="@drawable/screen_border_layout"
-        android:orientation="vertical" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/screen_border_layout"
+    tools:context="br.edu.ifspsaocarlos.sdm.cienciasdown.View.HistoricoActivity">
 
-        <com.jjoe64.graphview.GraphView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:title="Graph Title"
-            android:id="@+id/barGraphIndividual"
-            android:layout_below="@+id/barGraphText" />
+    <Spinner
+        android:id="@+id/spinnerOp1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/botao"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:hint="Clique para selecionar o assunto" />
 
-    </LinearLayout>
-</LinearLayout>
+    <Spinner
+        android:id="@+id/spinnerOp2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botao"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:hint="Clique para selecionar o conteúdo"
+        android:visibility="invisible"
+        android:layout_below="@+id/spinnerOp1"
+        android:layout_marginTop="6dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/dataChart01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/spinnerOp2" />
+
+</RelativeLayout>

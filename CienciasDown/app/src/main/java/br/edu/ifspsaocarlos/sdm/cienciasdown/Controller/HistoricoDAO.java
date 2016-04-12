@@ -43,14 +43,14 @@ public class HistoricoDAO {
         database.insert(SQLiteHelper.TABLE_HISTORICO, null, values);
     }
 
-    public List<Historico> buscaIndividual(String nome) {
+    public List<Historico> buscaIndividual(String aluno, String disciplina) {
 
         List<Historico> historicos = new ArrayList<Historico>();
 
         Cursor cursor = database.query(SQLiteHelper.TABLE_HISTORICO, new String[] { SQLiteHelper.KEY_HISTORICO,
                         SQLiteHelper.ALUNO, SQLiteHelper.ALUNO_TURMA, SQLiteHelper.DISCIPLINA, SQLiteHelper.TAREFA,
-                        SQLiteHelper.TENTATIVAS}, SQLiteHelper.ALUNO + "=?", new String[] { nome },
-                        null, null, SQLiteHelper.ALUNO);
+                        SQLiteHelper.TENTATIVAS}, SQLiteHelper.ALUNO + "=? AND " + SQLiteHelper.DISCIPLINA + "=?",
+                        new String[] { aluno, disciplina }, null, null, SQLiteHelper.ALUNO);
 
         if (cursor!=null)
         {
