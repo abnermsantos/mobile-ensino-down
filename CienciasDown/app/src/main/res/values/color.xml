@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <color name="fundo">#D3D3D3</color>
+        <color name="box">#666666</color>
+        <color name="menu">#FF8C00</color>
+        <color name="botao_inicial">#2e8fc2</color>
+        <color name="botao_final">#006599</color>
+        <color name="botao_borda">#00679e</color>
+        <color name="chart01">#0000CD</color>
+        <color name="chart02">#FFD700</color>
+        <color name="chart03">#4B0082</color>
+
+</resources>

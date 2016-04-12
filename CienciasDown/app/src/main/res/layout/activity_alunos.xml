@@ -3,12 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@color/background_floating_material_light"
+    android:background="@color/fundo"
     xmlns:ads="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_gravity="center"
         android:background="@drawable/screen_border_layout"
