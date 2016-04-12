@@ -3,11 +3,9 @@ package br.edu.ifspsaocarlos.sdm.cienciasdown.View;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -38,13 +36,13 @@ public class EvaporacaoActivity extends YouTubeBaseActivity implements YouTubePl
     private RadioButton radioButton1;
     private RadioButton radioButton2;
     private RadioButton radioButton3;
-    private Button btnResposta;
-    private TextView txtResposta;
-	private String idVideo;
+    private Button btContinuar;
+    private Button btRepetir;
+    private TextView txtParabens;
+    private TextView txtRepetir;
+    private String idVideo = "y6XMDA9mj3Y";
     private int tentativas;
-    private boolean tentar;
     SharedPreferences prefs;
-    MediaPlayer mp;
     Historico historico;
     HistoricoDAO historicoDAO;
 
@@ -63,20 +61,20 @@ public class EvaporacaoActivity extends YouTubeBaseActivity implements YouTubePl
         historicoDAO.open();
 
         //Vinculando Botões e textos
-        btnResposta = (Button) findViewById(R.id.btnEvap);
-        txtResposta = (TextView) findViewById(R.id.txtEvap);
+        btContinuar = (Button) findViewById(R.id.bt_evap_continuar);
+        btRepetir = (Button) findViewById(R.id.bt_evap_repetir);
+        txtParabens = (TextView) findViewById(R.id.txtEvapParabens);
+        txtRepetir = (TextView) findViewById(R.id.txtEvapRepetir);
 
         //Inicializa o componente "YOUTUBE"
-        idVideo = getString(R.string.id_video);
         youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtubeEvaporacao);
         youTubePlayerView.initialize(youtubeKey, this);
 
         //Chama a função para verificar a seleção
         verificaRadioGroup();
 
-        //Inicializa as variáveis tentativas
+        //Inicializa a variável tentativas
         tentativas = 0;
-        tentar = false;
     }
 
     @Override
@@ -130,37 +128,32 @@ public class EvaporacaoActivity extends YouTubeBaseActivity implements YouTubePl
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.opEvapSol) {
-                    //Altera caracteristicas dos botões e textos
-                    btnResposta.setVisibility(View.VISIBLE);
-                    txtResposta.setVisibility(View.VISIBLE);
-                    btnResposta.setText(getString(R.string.texto_botao_continuar));
-                    txtResposta.setText(getString(R.string.texto_parabens));
-                    tentar = true;
+                if(checkedId == R.id.opEvapSol) {
+                    //Altera caracteristicas de visibilidade dos botões e textos
+                    btContinuar.setVisibility(View.VISIBLE);
+                    btRepetir.setVisibility(View.INVISIBLE);
+                    txtParabens.setVisibility(View.VISIBLE);
+                    txtRepetir.setVisibility(View.INVISIBLE);
                     //Bloqueia os radios para seleção
                     radioButton1.setEnabled(false);
                     radioButton2.setEnabled(false);
                     radioButton3.setEnabled(false);
-                    //Método para chamar o audio
-                    playAudio();
-                } else if (checkedId == R.id.opEvapCasa) {
-                    //Altera caracteristicas dos botões e textos
-                    btnResposta.setVisibility(View.VISIBLE);
-                    txtResposta.setVisibility(View.VISIBLE);
-                    btnResposta.setText(getString(R.string.texto_botao_repetir));
-                    txtResposta.setText(getString(R.string.texto_tente_novamente));
-                    tentar = false;
+                } else if(checkedId == R.id.opEvapCasa) {
+                    //Altera caracteristicas de visibilidade dos botões e textos
+                    btContinuar.setVisibility(View.INVISIBLE);
+                    btRepetir.setVisibility(View.VISIBLE);
+                    txtParabens.setVisibility(View.INVISIBLE);
+                    txtRepetir.setVisibility(View.VISIBLE);
                     //Bloqueia os radios para seleção
                     radioButton1.setEnabled(false);
                     radioButton2.setEnabled(false);
                     radioButton3.setEnabled(false);
                 } else {
-                    //Altera caracteristicas dos botões e textos
-                    btnResposta.setVisibility(View.VISIBLE);
-                    txtResposta.setVisibility(View.VISIBLE);
-                    btnResposta.setText(getString(R.string.texto_botao_repetir));
-                    txtResposta.setText(getString(R.string.texto_tente_novamente));
-                    tentar = false;
+                    //Altera caracteristicas de visibilidade dos botões e textos
+                    btContinuar.setVisibility(View.INVISIBLE);
+                    btRepetir.setVisibility(View.VISIBLE);
+                    txtParabens.setVisibility(View.INVISIBLE);
+                    txtRepetir.setVisibility(View.VISIBLE);
                     //Bloqueia os radios para seleção
                     radioButton1.setEnabled(false);
                     radioButton2.setEnabled(false);
@@ -171,52 +164,47 @@ public class EvaporacaoActivity extends YouTubeBaseActivity implements YouTubePl
         });
     }
 
-    //Método para tratar eventos do botão
-    public void onClickEvap(View v){
-        if(tentar){
-            try{
-                //Incrementa o total de tentativas
-                tentativas += 1;
-
-                //Salva os dados no banco
-                historico.setAluno(prefs.getString("key_nome", null));
-                historico.setTurma(prefs.getString("key_turma", null));
-                historico.setDisciplina("Ciclo da Água");
-                historico.setTarefa("Evaporação");
-                historico.setTentativas(String.valueOf(tentativas));
-                historicoDAO.create(historico);
-
-                //Finaliza e volta para a tela anterior
-                Intent resultIntent = new Intent();
-                setResult(RESULT_OK,resultIntent);
-                finish();
-            }catch (Exception e){
-                Toast.makeText(EvaporacaoActivity.this, "Ocorreu uma falha, por favor tente novamente.",
-                        Toast.LENGTH_SHORT).show();
-            }
-        }else {
+    //Método para salvar a tentativa errada e liberar o sistema para tetar novamente
+    public void onClickRepetir(View v){
+        try{
             //Incrementa o total de tentativas
             tentativas += 1;
             //Altera caracteristicas de visibilidade dos botões e textos
-            btnResposta.setVisibility(View.INVISIBLE);
-            txtResposta.setVisibility(View.INVISIBLE);
+            btContinuar.setVisibility(View.INVISIBLE);
+            btRepetir.setVisibility(View.INVISIBLE);
+            txtParabens.setVisibility(View.INVISIBLE);
+            txtRepetir.setVisibility(View.INVISIBLE);
             //Bloqueia os radios para seleção
             radioButton1.setEnabled(true);
             radioButton2.setEnabled(true);
             radioButton3.setEnabled(true);
+        }catch (Exception e){
+            Toast.makeText(EvaporacaoActivity.this, "Ocorreu uma falha, por favor tente novamente.",
+                    Toast.LENGTH_SHORT).show();
         }
     }
 
-    //Método para chamar o arquivo de aplausos
-    private void playAudio(){
-        mp = MediaPlayer.create(EvaporacaoActivity.this, R.raw.aplauso);
-        mp.start();
-    }
+    //Método para chamar a Activity Ciclo da água e salvar os dados no banco
+    public void onClickContinuar(View v){
+        try{
+            //Incrementa o total de tentativas
+            tentativas += 1;
 
-    /*@Override
-    protected void onDestroy(){
-        super.onDestroy();
-        mp.release();
-        mp = null;
-    }*/
+            //Salva os dados no banco
+            historico.setAluno(prefs.getString("key_nome", null));
+            historico.setTurma(prefs.getString("key_turma", null));
+            historico.setDisciplina("Ciclo da Água");
+            historico.setTarefa("Evaporação");
+            historico.setTentativas(String.valueOf(tentativas));
+            historicoDAO.create(historico);
+
+            //Finaliza e volta para a tela anterior
+            Intent resultIntent = new Intent();
+            setResult(RESULT_OK,resultIntent);
+            finish();
+        }catch (Exception e){
+            Toast.makeText(EvaporacaoActivity.this, "Ocorreu uma falha, por favor tente novamente.",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
 }

@@ -3,13 +3,13 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@color/fundo"
+    android:background="@color/background_floating_material_light"
     xmlns:ads="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="2dp"
         android:layout_gravity="center"
         android:background="@drawable/screen_border_layout"
         android:orientation="vertical" >
@@ -56,16 +56,5 @@
             android:textSize="25sp"
             android:textStyle="bold"
             android:onClick="onClickPoluicao"/>
-
-        <TextView
-            android:text="@string/texto_assunto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_gravity="center"
-            android:visibility="invisible"
-            android:textColor="#FFFFFF"
-            android:textSize="5sp"
-            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>
