@@ -1,6 +1,24 @@
+<!--
+    Copyright 2016 Abner Moises dos Santos Gomes
+
+    This file is part of Ciência Interativa.
+
+    Ciência Interativa is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Foobar is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+-->
 <resources>
     <!-- Definições Básicas -->
-    <string name="app_name">Educadown</string>
+    <string name="app_name">Ciência Interativa</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_agua">AguaActivity</string>
     <string name="title_activity_cadastro">CadastroActivity</string>
@@ -10,6 +28,8 @@
     <string name="title_activity_poluicao_agua">PoluicaoAguaActivity</string>
     <string name="title_activity_alunos">AlunosActivity</string>
     <string name="title_activity_evaporacao">EvaporacaoActivity</string>
+    <string name="title_activity_condensacao">CondensacaoActivity</string>
+    <string name="id_video">031Lv99kEg4</string>
 
     <!-- Definições de Botões -->
     <string name="novo_usuario">Novo Usuário</string>
@@ -34,11 +54,13 @@
     <string name="texto_nome">Nome</string>
     <string name="texto_nascimento">Data de Nascimento</string>
     <string name="texto_turma">Turma</string>
-    <string name="texto_parabens">Parabéns, você acertou. Vamos para o próximo?</string>
-    <string name="texto_tente_novamente">Que pena. Vamos tentar novamente?</string>
+    <string name="texto_parabens">Parabéns! Você acertou. Vamos para o próximo?</string>
+    <string name="texto_tente_novamente">Que pena! Vamos tentar novamente?</string>
 
     <!-- Definições Questionários -->
-    <string name="questao_evaporacao">QUAL DOS ITENS FAZ PARTE DA EVAPORAÇÃO:</string>
+    <string name="questao_evaporacao">COM MINHA AJUDA, A ÁGUA EVAPORA. QUERO VER VOCÊ ADIVINHAR QUEM EU SOU AGORA!</string>
+    <string name="questao_condensacao">EU SÓ APAREÇO QUANDO A ÁGUA EVAPORA. TENTE DESCOBRIR ESSA CHARADA AGORA!</string>
+    <string name="questao_precipitacao">PARA CHOVER, EU PRECISO APARECER. QUEM SOU EU?</string>
 
     <!-- Definições de Popups -->
     <string name="popup">
@@ -46,5 +68,10 @@
         urna placerat porta eget ut enim. Donec eget hendrerit risus. Pellentesque eleifend
         tristique nibh in consequat. Ut vel magna non dolor venenatis facilisis.
     </string>
+    <string name="title_activity_precipitacao">PrecipitacaoActivity</string>
+    <string name="title_activity_evaporacao_offline">EvaporacaoOfflineActivity</string>
+    <string name="title_activity_video_teste">VideoTeste</string>
+    <string name="title_activity_condensacao_offline">CondensacaoOfflineActivity</string>
+    <string name="title_activity_precipitacao_offline">PrecipitacaoOfflineActivity</string>
 
 </resources>

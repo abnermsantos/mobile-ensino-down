@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2016 Abner Moises dos Santos Gomes
+
+    This file is part of Ciência Interativa.
+
+    Ciência Interativa is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Foobar is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.edu.ifspsaocarlos.sdm.cienciasdown" >
+    package="br.edu.ifspsaocarlos.sdm.cienciasdown">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/icone"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".View.MainActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,12 +62,30 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".View.AlunosActivity"
-            android:label="@string/title_activity_alunos" >
-        </activity>
+            android:label="@string/title_activity_alunos" />
         <activity
             android:name=".View.EvaporacaoActivity"
-            android:label="@string/title_activity_evaporacao" >
-        </activity>
+            android:label="@string/title_activity_evaporacao" />
+        <activity
+            android:name=".View.CondensacaoActivity"
+            android:label="@string/title_activity_condensacao"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".View.PrecipitacaoActivity"
+            android:label="@string/title_activity_precipitacao"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".View.EvaporacaoOfflineActivity"
+            android:label="@string/title_activity_evaporacao_offline"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".View.CondensacaoOfflineActivity"
+            android:label="@string/title_activity_condensacao_offline"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".View.PrecipitacaoOfflineActivity"
+            android:label="@string/title_activity_precipitacao_offline"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

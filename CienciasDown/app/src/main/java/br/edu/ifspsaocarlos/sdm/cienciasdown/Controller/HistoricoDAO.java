@@ -1,3 +1,21 @@
+/*
+ Copyright 2016 Abner Moises dos Santos Gomes
+
+ This file is part of Ciência Interativa.
+
+ Ciência Interativa is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ Foobar is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+*/
 package br.edu.ifspsaocarlos.sdm.cienciasdown.Controller;
 
 import android.content.ContentValues;
@@ -11,9 +29,6 @@ import java.util.List;
 
 import br.edu.ifspsaocarlos.sdm.cienciasdown.Model.Historico;
 
-/**
- * Created by Abner - Manutençao on 17/02/2016.
- */
 public class HistoricoDAO {
     private Context context;
     private SQLiteDatabase database;
@@ -43,14 +58,14 @@ public class HistoricoDAO {
         database.insert(SQLiteHelper.TABLE_HISTORICO, null, values);
     }
 
-    public List<Historico> buscaIndividual(String nome) {
+    public List<Historico> buscaIndividual(String aluno, String disciplina) {
 
         List<Historico> historicos = new ArrayList<Historico>();
 
         Cursor cursor = database.query(SQLiteHelper.TABLE_HISTORICO, new String[] { SQLiteHelper.KEY_HISTORICO,
                         SQLiteHelper.ALUNO, SQLiteHelper.ALUNO_TURMA, SQLiteHelper.DISCIPLINA, SQLiteHelper.TAREFA,
-                        SQLiteHelper.TENTATIVAS}, SQLiteHelper.ALUNO + "=?", new String[] { nome },
-                        null, null, SQLiteHelper.ALUNO);
+                        SQLiteHelper.TENTATIVAS}, SQLiteHelper.ALUNO + "=? AND " + SQLiteHelper.DISCIPLINA + "=?",
+                        new String[] { aluno, disciplina }, null, null, SQLiteHelper.ALUNO);
 
         if (cursor!=null)
         {

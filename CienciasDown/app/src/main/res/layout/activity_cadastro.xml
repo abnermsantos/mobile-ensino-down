@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2016 Abner Moises dos Santos Gomes
+
+    This file is part of Ciência Interativa.
+
+    Ciência Interativa is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Foobar is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@color/background_floating_material_light"
+    android:background="@color/fundo"
     xmlns:ads="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="2dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
         android:layout_gravity="center"
         android:background="@drawable/screen_border_layout"
         android:orientation="vertical" >
@@ -19,13 +37,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/texto_nome">
+            android:text="@string/texto_nome"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" >
         </TextView>
 
         <EditText
             android:id="@+id/edtNome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" >
         </EditText>
 
         <TextView
@@ -33,6 +55,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/texto_nascimento"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
             android:layout_marginTop="2dp" >
         </TextView>
 
@@ -41,7 +65,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
-            android:hint="10-10-2010">
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:hint="10/10/2010" >
         </EditText>
 
         <TextView
@@ -49,38 +75,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/texto_turma"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
             android:layout_marginTop="2dp" >
         </TextView>
 
         <EditText
             android:id="@+id/edtTurma"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" >
         </EditText>
 
-        <Button android:id="@+id/bt_enviar"
-            android:layout_width="match_parent"
+        <TextView
+            android:text="@string/texto_assunto"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/botao"
+            android:layout_marginTop="2dp"
+            android:layout_gravity="center"
             android:visibility="invisible"
-            android:text="@string/texto_botao_enviar"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:onClick="onClickEnviar"/>
-
-        <Button android:id="@+id/bt_ver_alunos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/botao"
-            android:visibility="invisible"
-            android:text="@string/texto_botao_ver_alunos"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:onClick="onClickVerAlunos"/>
+            android:textSize="5sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </LinearLayout>

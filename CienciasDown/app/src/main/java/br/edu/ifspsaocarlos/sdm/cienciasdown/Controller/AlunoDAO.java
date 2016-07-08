@@ -1,3 +1,21 @@
+/*
+ Copyright 2016 Abner Moises dos Santos Gomes
+
+ This file is part of Ciência Interativa.
+
+ Ciência Interativa is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ Foobar is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+*/
 package br.edu.ifspsaocarlos.sdm.cienciasdown.Controller;
 
 import android.content.ContentValues;
@@ -11,9 +29,6 @@ import java.util.List;
 
 import br.edu.ifspsaocarlos.sdm.cienciasdown.Model.Aluno;
 
-/**
- * Created by Abner - Manutençao on 11/09/2015.
- */
 public class AlunoDAO {
     private Context context;
     private SQLiteDatabase database;
@@ -51,6 +66,27 @@ public class AlunoDAO {
         }
         cursor.close();
         return nomes;
+    }
+
+    public List<Aluno> buscaPorTurma(String turma){
+        List<Aluno> alunos = new ArrayList<Aluno>();
+        Cursor cursor = database.query(SQLiteHelper.TABLE_ALUNO, new String[] {
+                        SQLiteHelper.KEY_NAME, SQLiteHelper.KEY_TURMA},
+                SQLiteHelper.KEY_TURMA + "=?", new String[] { turma }, null, null, SQLiteHelper.KEY_NAME);
+
+        if (cursor!=null)
+        {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                Aluno aluno = new Aluno();
+                aluno.setNome(cursor.getString(0));
+                aluno.setTurma(cursor.getString(1));
+                alunos.add(aluno);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return alunos;
     }
 
     public List<Aluno> buscaTodos() {
