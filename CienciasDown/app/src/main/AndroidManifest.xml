@@ -73,6 +73,7 @@
         <activity
             android:name=".View.PrecipitacaoActivity"
             android:label="@string/title_activity_precipitacao"
+<<<<<<< HEAD
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".View.EvaporacaoOfflineActivity"
@@ -85,6 +86,8 @@
         <activity
             android:name=".View.PrecipitacaoOfflineActivity"
             android:label="@string/title_activity_precipitacao_offline"
+=======
+>>>>>>> origin/master
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

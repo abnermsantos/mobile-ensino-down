@@ -29,7 +29,12 @@
     <string name="title_activity_alunos">AlunosActivity</string>
     <string name="title_activity_evaporacao">EvaporacaoActivity</string>
     <string name="title_activity_condensacao">CondensacaoActivity</string>
+<<<<<<< HEAD
     <string name="id_video">031Lv99kEg4</string>
+=======
+    <string name="id_video">_hAz2-1jTvs</string>
+
+>>>>>>> origin/master
 
     <!-- Definições de Botões -->
     <string name="novo_usuario">Novo Usuário</string>
@@ -69,9 +74,12 @@
         tristique nibh in consequat. Ut vel magna non dolor venenatis facilisis.
     </string>
     <string name="title_activity_precipitacao">PrecipitacaoActivity</string>
+<<<<<<< HEAD
     <string name="title_activity_evaporacao_offline">EvaporacaoOfflineActivity</string>
     <string name="title_activity_video_teste">VideoTeste</string>
     <string name="title_activity_condensacao_offline">CondensacaoOfflineActivity</string>
     <string name="title_activity_precipitacao_offline">PrecipitacaoOfflineActivity</string>
+=======
+>>>>>>> origin/master
 
 </resources>

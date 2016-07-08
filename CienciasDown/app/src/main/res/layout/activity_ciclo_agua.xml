@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <!--
     Copyright 2016 Abner Moises dos Santos Gomes
 
@@ -17,6 +18,8 @@
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 -->
+=======
+>>>>>>> origin/master
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -54,8 +57,13 @@
                 android:layout_weight=".33"
                 android:layout_height="match_parent"
                 android:id="@+id/btnPrecipitacao"
+<<<<<<< HEAD
                 android:background="@drawable/ciclo_evap"
                 android:onClick="onClickEvaporacao" />
+=======
+                android:background="@drawable/ciclo_prec"
+                android:onClick="onClickPrecipitacao" />
+>>>>>>> origin/master
 
             <Button
                 android:layout_width="0dp"
@@ -71,8 +79,61 @@
                 android:layout_weight=".33"
                 android:layout_height="match_parent"
                 android:id="@+id/btnEvaporacao"
+<<<<<<< HEAD
                 android:background="@drawable/ciclo_prec"
                 android:onClick="onClickPrecipitacao" />
 
         </LinearLayout>
 </LinearLayout>
+=======
+                android:background="@drawable/ciclo_evap"
+                android:onClick="onClickEvaporacao" />
+
+        </LinearLayout>
+</LinearLayout>
+
+
+
+        <!--RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/ciclo_agua"
+    tools:context="br.edu.ifspsaocarlos.sdm.cienciasdown.View.CicloAguaActivity">
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:text="EVAPORAÇÃO"
+        android:id="@+id/btnEvaporacao"
+        android:background="@drawable/botao_transparente"
+        android:onClick="onClickEvaporacao"
+        android:layout_alignTop="@+id/btnCondensacao"
+        android:layout_toRightOf="@+id/btnCondensacao"
+        android:layout_toEndOf="@+id/btnCondensacao"
+        android:layout_marginTop="76dp" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:text="Precipitação"
+        android:id="@+id/btnPrecipitacao"
+        android:background="@drawable/botao_transparente"
+        android:onClick="onClickPrecipitacao"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:text="Condesação"
+        android:id="@+id/btnCondensacao"
+        android:background="@drawable/botao_transparente"
+        android:onClick="onClickCondensacao"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp" />
+
+</RelativeLayout-->
+>>>>>>> origin/master

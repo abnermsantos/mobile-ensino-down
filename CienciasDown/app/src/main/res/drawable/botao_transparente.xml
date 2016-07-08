@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <!--
     Copyright 2016 Abner Moises dos Santos Gomes
 
@@ -17,6 +18,8 @@
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 -->
+=======
+>>>>>>> origin/master
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:state_pressed="true" android:drawable="@drawable/botao_transparente_selecionado" />
     <item android:drawable="@drawable/botao_transparente_normal"/>

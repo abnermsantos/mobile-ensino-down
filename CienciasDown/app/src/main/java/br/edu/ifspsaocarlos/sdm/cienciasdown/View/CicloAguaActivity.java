@@ -35,7 +35,10 @@ import android.net.NetworkInfo;
 import br.edu.ifspsaocarlos.sdm.cienciasdown.R;
 
 public class CicloAguaActivity extends AppCompatActivity {
+<<<<<<< HEAD
     private Context context;
+=======
+>>>>>>> origin/master
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +76,7 @@ public class CicloAguaActivity extends AppCompatActivity {
     //Método para chamar a Activity de Trabalho(Evaporação)
     public void onClickEvaporacao(View v){
         try{
+<<<<<<< HEAD
             Intent intent;
             if(existeConexao()){
                 intent = new Intent(CicloAguaActivity.this, EvaporacaoActivity.class);
@@ -81,6 +85,10 @@ public class CicloAguaActivity extends AppCompatActivity {
                 intent = new Intent(CicloAguaActivity.this, EvaporacaoOfflineActivity.class);
                 startActivity(intent);
             }
+=======
+            Intent intent = new Intent(CicloAguaActivity.this, EvaporacaoActivity.class);
+            startActivity(intent);
+>>>>>>> origin/master
         }catch (Exception e){
             Toast.makeText(CicloAguaActivity.this, "Ocorreu uma falha, por favor tente novamente.",
                     Toast.LENGTH_SHORT).show();
@@ -90,6 +98,7 @@ public class CicloAguaActivity extends AppCompatActivity {
     //Método para chamar a Activity de Trabalho(Condensação)
     public void onClickCondensacao(View v){
         try{
+<<<<<<< HEAD
             Intent intent;
             if(existeConexao()){
                 intent = new Intent(CicloAguaActivity.this, CondensacaoActivity.class);
@@ -98,6 +107,10 @@ public class CicloAguaActivity extends AppCompatActivity {
                 intent = new Intent(CicloAguaActivity.this, CondensacaoOfflineActivity.class);
                 startActivity(intent);
             }
+=======
+            Intent intent = new Intent(CicloAguaActivity.this, CondensacaoActivity.class);
+            startActivity(intent);
+>>>>>>> origin/master
         }catch (Exception e){
             Toast.makeText(CicloAguaActivity.this, "Ocorreu uma falha, por favor tente novamente.",
                     Toast.LENGTH_SHORT).show();
@@ -107,6 +120,7 @@ public class CicloAguaActivity extends AppCompatActivity {
     //Método para chamar a Activity de Trabalho(Precipitação)
     public void onClickPrecipitacao(View v){
         try{
+<<<<<<< HEAD
             Intent intent;
             if(existeConexao()){
                 intent = new Intent(CicloAguaActivity.this, PrecipitacaoActivity.class);
@@ -115,6 +129,10 @@ public class CicloAguaActivity extends AppCompatActivity {
                 intent = new Intent(CicloAguaActivity.this, PrecipitacaoOfflineActivity.class);
                 startActivity(intent);
             }
+=======
+            Intent intent = new Intent(CicloAguaActivity.this, PrecipitacaoActivity.class);
+            startActivity(intent);
+>>>>>>> origin/master
         }catch (Exception e){
             Toast.makeText(CicloAguaActivity.this, "Ocorreu uma falha, por favor tente novamente.",
                     Toast.LENGTH_SHORT).show();

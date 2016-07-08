@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  Copyright 2016 Abner Moises dos Santos Gomes
 
@@ -16,6 +17,8 @@
  You should have received a copy of the GNU General Public License
  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
+=======
+>>>>>>> origin/master
 package br.edu.ifspsaocarlos.sdm.cienciasdown.View;
 
 import android.app.Dialog;

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <!--
     Copyright 2016 Abner Moises dos Santos Gomes
 
@@ -17,6 +18,8 @@
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 -->
+=======
+>>>>>>> origin/master
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -119,4 +122,126 @@
 
         </LinearLayout>
     </ScrollView>
+<<<<<<< HEAD
 </LinearLayout>
+=======
+</LinearLayout>
+
+
+
+<!--RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.edu.ifspsaocarlos.sdm.cienciasdown.View.CondensacaoActivity"
+    android:background="@drawable/screen_border_layout">
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/youtubeCondensacao"
+        android:layout_marginRight="315dp"
+        android:layout_marginEnd="315dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="123dp" />
+
+    <TextView
+        android:id="@+id/txtCondParabens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_parabens"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        android:layout_alignRight="@+id/rdgCondensacao"
+        android:layout_alignEnd="@+id/rdgCondensacao"
+        android:layout_marginTop="31dp">
+    </TextView>
+
+    <Button android:id="@+id/bt_cond_continuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botao"
+        android:visibility="invisible"
+        android:text="@string/texto_botao_continuar"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/bt_cond_repetir"
+        android:layout_alignLeft="@+id/bt_cond_repetir"
+        android:layout_alignStart="@+id/bt_cond_repetir"
+        android:layout_alignRight="@+id/bt_cond_repetir"
+        android:layout_alignEnd="@+id/bt_cond_repetir"
+        android:onClick="onClickContinuar"/>
+
+    <TextView
+        android:id="@+id/txtCondRepetir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="@string/texto_tente_novamente"
+        android:layout_alignRight="@+id/txtCondParabens"
+        android:layout_alignEnd="@+id/txtCondParabens"
+        android:layout_alignTop="@+id/txtCondParabens"
+        android:layout_alignLeft="@+id/txtCondParabens"
+        android:layout_alignStart="@+id/txtCondParabens">
+    </TextView>
+
+    <Button android:id="@+id/bt_cond_repetir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botao"
+        android:visibility="invisible"
+        android:text="@string/texto_botao_repetir"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:onClick="onClickRepetir"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/txtCondParabens"
+        android:layout_alignStart="@+id/txtCondParabens" />
+
+    <TextView
+        android:id="@+id/txtQuestãoCondensacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/questao_condensacao"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="87dp">
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/rdgCondensacao"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_alignTop="@+id/txtQuestãoCondensacao"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="44dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/opCondCasa"
+            android:drawableRight="@drawable/casa" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/opCondNuvem"
+            android:drawableRight="@drawable/nuvem" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/opCondPeixe"
+            android:drawableRight="@drawable/peixe" />
+    </RadioGroup>
+</RelativeLayout-->
+>>>>>>> origin/master

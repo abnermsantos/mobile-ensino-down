@@ -38,10 +38,17 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
+<<<<<<< HEAD
 
 import java.util.ArrayList;
 import java.util.List;
 
+=======
+
+import java.util.ArrayList;
+import java.util.List;
+
+>>>>>>> origin/master
 import br.edu.ifspsaocarlos.sdm.cienciasdown.Controller.AlunoDAO;
 import br.edu.ifspsaocarlos.sdm.cienciasdown.Controller.HistoricoDAO;
 import br.edu.ifspsaocarlos.sdm.cienciasdown.Model.Aluno;
@@ -88,6 +95,7 @@ public class HistoricoActivity extends AppCompatActivity {
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, assunto);
+<<<<<<< HEAD
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -95,6 +103,25 @@ public class HistoricoActivity extends AppCompatActivity {
         // attaching data adapter to spinner
         spinnerOp1.setAdapter(dataAdapter);
 
+=======
+<<<<<<< HEAD
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinnerOp1.setAdapter(dataAdapter);
+
+=======
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinnerOp1.setAdapter(dataAdapter);
+
+>>>>>>> origin/master
+>>>>>>> origin/master
         //Listener do SppinerOp1
         spinnerOp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -187,6 +214,7 @@ public class HistoricoActivity extends AppCompatActivity {
 
     //Método para criar e popular o gráfico
     private void criarGrafico(String conteudo){
+<<<<<<< HEAD
         try{
             BarData data = new BarData(getXAxisValues(), getDataSet(conteudo));
             barChart.setData(data);
@@ -198,17 +226,34 @@ public class HistoricoActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
 
+=======
+        BarData data = new BarData(getXAxisValues(), getDataSet(conteudo));
+        barChart.setData(data);
+        barChart.setDescription(conteudo);
+        barChart.animateXY(2000, 2000);
+        barChart.invalidate();
+>>>>>>> origin/master
     }
 
     private ArrayList<BarDataSet> getDataSet(String conteudo) {
         ArrayList<BarDataSet> dataSets = new ArrayList<>();
         ArrayList<BarEntry> valueSet = new ArrayList<>();
+<<<<<<< HEAD
         ArrayList<BarEntry> valueSet2 = new ArrayList<>();
         ArrayList<BarEntry> valueSet3 = new ArrayList<>();
         BarEntry value;
         BarDataSet barDataSet = null;
         BarDataSet barDataSet2 = null;
         BarDataSet barDataSet3 = null;
+=======
+        BarEntry value = null;
+        BarDataSet barDataSet = null;
+<<<<<<< HEAD
+        BarDataSet barDataSet2 = null;
+        BarDataSet barDataSet3 = null;
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 
         //Busca os dados do Banco
         try{
@@ -236,9 +281,15 @@ public class HistoricoActivity extends AppCompatActivity {
             String tarefa1 = "";
             String tarefa2 = "";
             String tarefa3 = "";
+<<<<<<< HEAD
             String legenda;
             int color;
             int position;
+=======
+            String legenda = "";
+            int color = 0;
+            int position = 0;
+>>>>>>> origin/master
 
             barChart.setVisibility(View.VISIBLE);
 
@@ -248,6 +299,10 @@ public class HistoricoActivity extends AppCompatActivity {
                     tarefa1 = h.getTarefa();
                     position = 0;
                     legenda = tarefa1;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
                     color = Color.rgb(1, 155, 255);
 
                     value = new BarEntry(Float.valueOf(h.getTentativas()), position);
@@ -255,24 +310,52 @@ public class HistoricoActivity extends AppCompatActivity {
                     barDataSet = new BarDataSet(valueSet, legenda);
                     barDataSet.setColor(color);
 
+<<<<<<< HEAD
+=======
+=======
+                    color = Color.rgb(0, 155, 0);
+>>>>>>> origin/master
+>>>>>>> origin/master
                 } else if(tarefa2.equals("") || tarefa2.equals(h.getTarefa())){
                     tarefa2 = h.getTarefa();
                     position = 1;
                     legenda = tarefa2;
+<<<<<<< HEAD
                     color = Color.rgb(0, 0, 300);
 
                     BarEntry value2 = new BarEntry(Float.valueOf(h.getTentativas()), position);
+=======
+<<<<<<< HEAD
+                    color = Color.rgb(0, 0, 300);
+
+                    BarEntry value2 = new BarEntry(Float.valueOf(h.getTentativas()), position);
+                    ArrayList<BarEntry> valueSet2 = new ArrayList<>();
+>>>>>>> origin/master
                     valueSet2.add(value2);
                     barDataSet2 = new BarDataSet(valueSet2, legenda);
                     barDataSet2.setColor(color);
 
+<<<<<<< HEAD
+=======
+=======
+                    color = Color.rgb(0, 205, 0);
+>>>>>>> origin/master
+>>>>>>> origin/master
                 } else if(tarefa3.equals("") || tarefa3.equals(h.getTarefa())){
                     tarefa3 = h.getTarefa();
                     position = 2;
                     legenda = tarefa3;
+<<<<<<< HEAD
                     color = Color.rgb(200, 0, 200);
 
                     BarEntry value3 = new BarEntry(Float.valueOf(h.getTentativas()), position);
+=======
+<<<<<<< HEAD
+                    color = Color.rgb(200, 0, 200);
+
+                    BarEntry value3 = new BarEntry(Float.valueOf(h.getTentativas()), position);
+                    ArrayList<BarEntry> valueSet3 = new ArrayList<>();
+>>>>>>> origin/master
                     valueSet3.add(value3);
                     barDataSet3 = new BarDataSet(valueSet3, legenda);
                     barDataSet3.setColor(color);
@@ -282,6 +365,19 @@ public class HistoricoActivity extends AppCompatActivity {
             dataSets.add(barDataSet);
             dataSets.add(barDataSet2);
             dataSets.add(barDataSet3);
+<<<<<<< HEAD
+=======
+=======
+                    color = Color.rgb(0, 255, 0);
+                }
+                value = new BarEntry(Float.valueOf(h.getTentativas()), position);
+                valueSet.add(value);
+                barDataSet = new BarDataSet(valueSet, legenda);
+                barDataSet.setColor(color);
+                dataSets.add(barDataSet);
+            }
+>>>>>>> origin/master
+>>>>>>> origin/master
             return dataSets;
         }
     }
@@ -289,7 +385,15 @@ public class HistoricoActivity extends AppCompatActivity {
     private ArrayList<String> getXAxisValues() {
         ArrayList<String> xAxis = new ArrayList<>();
         //Busca os dados do Banco
+<<<<<<< HEAD
         try{
+=======
+<<<<<<< HEAD
+        /*try{
+=======
+        try{
+>>>>>>> origin/master
+>>>>>>> origin/master
             alunos = null;
             alunos = alunoDAO.buscaPorTurma(turma);
         }catch (Exception e){
@@ -297,12 +401,26 @@ public class HistoricoActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
         for(Aluno a : alunos) {
+<<<<<<< HEAD
             xAxis.add(a.getNome());
 
         }
         /*xAxis.add("1");
         xAxis.add("2");
         xAxis.add("3");*/
+=======
+<<<<<<< HEAD
+            //xAxis.add(a.getNome());
+
+        }*/
+        xAxis.add("1");
+        xAxis.add("2");
+        xAxis.add("3");
+=======
+            xAxis.add(a.getNome());
+        }
+>>>>>>> origin/master
+>>>>>>> origin/master
         return xAxis;
     }
 

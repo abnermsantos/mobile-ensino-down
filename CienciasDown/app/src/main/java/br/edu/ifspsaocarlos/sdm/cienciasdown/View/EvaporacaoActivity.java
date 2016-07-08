@@ -56,9 +56,24 @@ public class EvaporacaoActivity extends YouTubeBaseActivity implements YouTubePl
     private RadioButton radioButton1;
     private RadioButton radioButton2;
     private RadioButton radioButton3;
+<<<<<<< HEAD
     private Button btnResposta;
     private TextView txtResposta;
 	private String idVideo;
+=======
+<<<<<<< HEAD
+    private Button btnResposta;
+    private TextView txtResposta;
+	private String idVideo;
+=======
+    private Button btContinuar;
+    private Button btRepetir;
+    private TextView txtParabens;
+    private TextView txtRepetir;
+	private String idVideo = "WpOkQ7ayUxQ";
+    //private String idVideo = "y6XMDA9mj3Y";
+>>>>>>> origin/master
+>>>>>>> origin/master
     private int tentativas;
     private boolean tentar;
     SharedPreferences prefs;
